@@ -13,9 +13,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Gestión del formulario de contacto (Redirección mailto para GitHub Pages)
-const contactForm = document.getElementById('contact-form');
-
 // Gestión REAL del formulario de contacto (Envío directo a Gmail sin backend)
 const contactForm = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
