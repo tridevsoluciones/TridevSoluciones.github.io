@@ -271,7 +271,7 @@ body {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    background-color: aquamarine;
+    background-color: #a0aec0;
 }
 
 .highlighted-card {
