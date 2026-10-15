@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TridevSoluciones | Automatización de Procesos y Servicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo-link">
+                <!-- Asegúrate de llamar a tu imagen logo.jpg en la misma carpeta -->
+                <img src="logo.jpg" alt="TridevSoluciones Logo" class="nav-logo" onerror="this.style.display='none'">
+                <span class="brand-name">TriDev<span>SOLUCIONES</span></span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Qué hacemos</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#nosotros">Sobre Nosotros</a>
+                <a href="#clientes">Clientes</a>
+                <a href="#contacto">Contacto</a>
+                <!-- Botón destacado para el Dashboard en Render -->
+                <a href="https://www.google.com" target="_blank" class="btn-dashboard">
+                    <i class="fas fa-chart-line"></i> Panel Clientes
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO / INICIO -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">Innovación y Eficiencia</span>
+                <h1>Automatizamos tu negocio, <span class="highlight">multiplicamos tu tiempo</span>.</h1>
+                <p>Especialistas en automatización de procesos y servicios. Desarrollamos soluciones tecnológicas
+                    <strong>100% personalizadas</strong>, diseñadas a medida según los gustos, flujos de trabajo y
+                    especificaciones exactas de cada cliente.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Presupuesto</a>
+                    <a href="#proyectos" class="btn btn-secondary">Ver Demostraciones</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="logo-showcase">
+                    <img src="logo.jpg" alt="Logo TridevSoluciones"
+                        onerror="this.parentElement.innerHTML='<div class=\'black-box-logo\'>LOGO TRIDEV</div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUÉ HACEMOS / FILOSOFÍA DE PERSONALIZACIÓN -->
+    <section id="servicios" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿A qué nos dedicamos?</h2>
+                <p>Transformamos tareas manuales y repetitivas en sistemas inteligentes que trabajan por ti 24/7.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3>Automatización de Procesos</h3>
+                    <p>Conectamos tus herramientas, gestionamos reservas, citas y atención al cliente de forma
+                        automática sin intervención humana.</p>
+                </div>
+                <div class="feature-card highlighted-card">
+                    <i class="fas fa-sliders-h feature-icon"></i>
+                    <h3>100% A Medida por Cliente</h3>
+                    <p>No vendemos plantillas cerradas. Adaptamos cada línea de código no solo al tipo de servicio, sino
+                        a tus gustos personales y especificaciones técnicas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-desktop feature-icon"></i>
+                    <h3>Dashboard Exclusivo</h3>
+                    <p>Cada cliente cuenta con acceso a nuestro <strong>Panel de Control en la nube (Render)</strong>
+                        para monitorizar métricas, citas y rendimiento en tiempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS Y DEMOSTRACIONES (Con huecos negros temporales) -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Proyectos en Acción</h2>
+                <p>Casos reales de automatización implementados con éxito.</p>
+            </div>
+
+            <!-- Proyecto 1: Salón de Celebraciones -->
+            <div class="project-row">
+                <div class="project-info">
+                    <span class="project-tag"><i class="fab fa-whatsapp"></i> Automatización WhatsApp</span>
+                    <h3>Gestión de Citas para Salón de Celebraciones</h3>
+                    <p>Sistema inteligente integrado en WhatsApp que atiende a los clientes de forma automática,
+                        consulta disponibilidad en tiempo real, agenda citas para visitar el salón y envía
+                        recordatorios, todo adaptado al tono y estilo del salón.</p>
+                    <ul class="project-list">
+                        <li><i class="fas fa-check"></i> Respuesta instantánea 24/7.</li>
+                        <li><i class="fas fa-check"></i> Sincronización con calendario y Panel de Control.</li>
+                        <li><i class="fas fa-check"></i> Flujo de conversación personalizado al cliente.</li>
+                    </ul>
+                    <a href="https://www.google.com" target="_blank" class="btn btn-outline">Ver Caso de Estudio</a>
+                </div>
+                <div class="project-media">
+                    <!-- Cuadrados negros temporales para fotos y vídeos de prueba -->
+                    <div class="media-grid">
+                        <a href="https://www.google.com" target="_blank" class="black-placeholder video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Vídeo Demo WhatsApp (Temporal)</span>
+                        </a>
+                        <div class="black-placeholder">
+                            <span>Captura Prueba 1 (Temporal)</span>
+                        </div>
+                        <div class="black-placeholder">
+                            <span>Captura Prueba 2 (Temporal)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Proyecto 2: Pisos Turísticos -->
+            <div class="project-row reverse">
+                <div class="project-info">
+                    <span class="project-tag"><i class="fas fa-key"></i> Sector Inmobiliario / Turístico</span>
+                    <h3>Automatización Integral de Pisos Turísticos</h3>
+                    <p>Solución completa para propietarios y gestores de alojamientos turísticos. Automatizamos desde el
+                        check-in digital y envío de normas o códigos de acceso, hasta la gestión de incidencias y
+                        coordinación de limpieza.</p>
+                    <ul class="project-list">
+                        <li><i class="fas fa-check"></i> Check-in y registro de huéspedes automatizado.</li>
+                        <li><i class="fas fa-check"></i> Envío programado de guías y accesos.</li>
+                        <li><i class="fas fa-check"></i> Control total desde el Dashboard de cliente.</li>
+                    </ul>
+                    <a href="https://www.google.com" target="_blank" class="btn btn-outline">Ver Caso de Estudio</a>
+                </div>
+                <div class="project-media">
+                    <div class="media-grid">
+                        <a href="https://www.google.com" target="_blank" class="black-placeholder video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Vídeo Demo Gestión Pisos (Temporal)</span>
+                        </a>
+                        <div class="black-placeholder">
+                            <span>Imagen Dashboard (Temporal)</span>
+                        </div>
+                        <div class="black-placeholder">
+                            <span>Imagen Flujo Huésped (Temporal)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCESO RÁPIDO AL DASHBOARD -->
+    <section class="dashboard-banner">
+        <div class="container banner-content">
+            <div>
+                <h2>¿Ya eres cliente de TridevSoluciones?</h2>
+                <p>Accede a tu panel personalizado alojado en Render para gestionar tus automatizaciones en tiempo real.
+                </p>
+            </div>
+            <a href="https://www.google.com" target="_blank" class="btn btn-primary btn-large">
+                Ir al Panel (Dashboard) <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="nosotros" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Nosotros</h2>
+                <p>El motor humano detrás de la tecnología.</p>
+            </div>
+
+            <div class="about-story">
+                <p>En <strong>TridevSoluciones</strong> somos tres jóvenes emprendedores dando el salto al mundo
+                    empresarial con una visión clara: demostrar que la tecnología más avanzada no tiene por qué ser fría
+                    ni inaccesible. Nos mueven la ambición de innovar, la curiosidad constante y el sueño de construir
+                    soluciones que realmente cambien el día a día de las empresas. Combinamos la energía, frescura y
+                    agilidad de nuestra generación con un compromiso absoluto por la excelencia técnica, tratando cada
+                    proyecto como si fuera el nuestro propio.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Emprendedor 1 -->
+                <div class="team-card">
+                    <div class="black-placeholder avatar-placeholder">
+                        <span>Foto 1</span>
+                    </div>
+                    <h4>Nombre Temporal 1</h4>
+                    <span class="role">Co-Founder & Full Stack Dev</span>
+                    <p>Apasionado por la arquitectura de software y la optimización de procesos complejos.</p>
+                    <p class="team-phone"><i class="fas fa-phone"></i> +34 600 000 001</p>
+                </div>
+                <!-- Emprendedor 2 -->
+                <div class="team-card">
+                    <div class="black-placeholder avatar-placeholder">
+                        <span>Foto 2</span>
+                    </div>
+                    <h4>Nombre Temporal 2</h4>
+                    <span class="role">Co-Founder & Especialista en Automatización</span>
+                    <p>Enfocado en integraciones de APIs, bots conversacionales y experiencia de usuario.</p>
+                    <p class="team-phone"><i class="fas fa-phone"></i> +34 600 000 002</p>
+                </div>
+                <!-- Emprendedor 3 -->
+                <div class="team-card">
+                    <div class="black-placeholder avatar-placeholder">
+                        <span>Foto 3</span>
+                    </div>
+                    <h4>Nombre Temporal 3</h4>
+                    <span class="role">Co-Founder & Gestor de Proyectos</span>
+                    <p>Dedicado a traducir las necesidades y gustos de cada cliente en soluciones a medida.</p>
+                    <p class="team-phone"><i class="fas fa-phone"></i> +34 600 000 003</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTROS CLIENTES Y COLABORADORES -->
+    <section id="clientes" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Empresas que confían en nosotros</h2>
+                <p>Trabajamos codo con codo con nuestros clientes y partners estratégicos.</p>
+            </div>
+            <div class="clients-grid">
+                <a href="https://www.google.com" target="_blank" class="client-card">
+                    <div class="black-placeholder client-logo">Logo A3C</div>
+                    <h4>A3C Soluciones</h4>
+                    <span class="client-type">Empresa Matriz y Partner Estratégico</span>
+                </a>
+                <a href="https://www.google.com" target="_blank" class="client-card">
+                    <div class="black-placeholder client-logo">Logo Salón</div>
+                    <h4>Salón de Celebraciones (Temporal)</h4>
+                    <span class="client-type">Automatización de Citas WhatsApp</span>
+                </a>
+                <a href="https://www.google.com" target="_blank" class="client-card">
+                    <div class="black-placeholder client-logo">Logo Pisos</div>
+                    <h4>Gestión Pisos Turísticos (Temporal)</h4>
+                    <span class="client-type">Automatización Integral de Alojamientos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section bg-dark">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Hablemos de tu próximo proyecto</h2>
+                    <p>Cuéntanos qué proceso te quita tiempo y diseñaremos una propuesta 100% personalizada a tus gustos
+                        y necesidades.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span>Correo Electrónico</span>
+                                <a href="mailto:tridevsoluciones@gmail.com">tridevsoluciones@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span>Teléfonos de Contacto (Temporales)</span>
+                                <p>+34 600 000 001 (Nombre 1)</p>
+                                <p>+34 600 000 002 (Nombre 2)</p>
+                                <p>+34 600 000 003 (Nombre 3)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre o Empresa</label>
+                        <input type="text" id="nombre" required placeholder="Tu nombre...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" required placeholder="tu@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">¿Qué necesitas automatizar?</label>
+                        <textarea id="mensaje" rows="4" required
+                            placeholder="Cuéntanos tu idea o las especificaciones que buscas..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y AVISO LEGAL -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>TriDev<span>SOLUCIONES</span></h3>
+                <p>Especialistas en automatización de procesos y servicios a medida.</p>
+            </div>
+            <div class="footer-legal">
+                <h4>Información Legal y Corporativa</h4>
+                <p><strong>TridevSoluciones</strong> actúa como entidad colaboradora. A efectos legales, comerciales y
+                    de responsabilidad operativa, toda actividad depende directamente de la empresa matriz original
+                    <strong>A3CSoluciones</strong>.</p>
+                <a href="https://www.google.com" target="_blank" class="legal-link">
+                    Visitar web oficial de A3CSoluciones <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TridevSoluciones - En colaboración con <a href="https://www.google.com"
+                    target="_blank">A3CSoluciones</a>. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
