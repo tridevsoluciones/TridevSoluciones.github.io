@@ -372,10 +372,6 @@ body {
     margin-bottom: 10px;
 }
 
-.black-placeholder:hover {
-    border-color: var(--primary-orange);
-    opacity: 0.9;
-}
 
 .divider {
     border: none;
