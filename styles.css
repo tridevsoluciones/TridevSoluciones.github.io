@@ -426,11 +426,6 @@ body {
     gap: 30px;
 }
 
-img {
-    width: 110px;
-    height: 110px;
-}
-
 .team-card {
     background: var(--white);
     padding: 25px;
@@ -445,6 +440,18 @@ img {
     border-radius: 50%;
     margin: 0 auto 15px;
     min-height: auto;
+}
+
+.team-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Evita que la foto se deforme */
+    display: block;
+    margin: 0 auto 15px;
+    border: 3px solid var(--primary-orange);
+    /* Toque corporativo opcional */
 }
 
 .team-card h4 {
