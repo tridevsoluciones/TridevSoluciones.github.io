@@ -119,26 +119,20 @@
                     </ul>
                 </div>
                 <div class="project-media">
-                    <!-- Cuadrados negros temporales para fotos y vídeos de prueba -->
                     <div class="media-grid">
-                        <a href="https://www.google.com" target="_blank" class="black-placeholder video-placeholder">
-                            <i class="fas fa-play-circle"></i>
-                            <span><video src="fotos/autodate.mp4" class="project-media media-large" controls
-                                    playsinline></video></span>
-                        </a>
-                        <div class="black-placeholder">
-                            <span><img src="fotos/FotoLista.jpeg" alt="" class="project-media"></span>
-                        </div>
-                        <div class="black-placeholder">
-                            <span><img src="fotos/FotoConfirmacion.jpeg" alt="" class="project-media"></span>
-                        </div>
+                        <video src="fotos/autodate.mp4" class="project-item item-large" controls playsinline></video>
+
+                        <img src="fotos/FotoLista.jpeg" alt="" class="project-item gallery-img">
+
+                        <img src="fotos/FotoConfirmacion.jpeg" alt="" class="project-item gallery-img">
                     </div>
                 </div>
             </div>
+        </div>
 
-            <hr class="divider">
+        <hr class="divider">
 
-            <!-- Proyecto 2: Pisos Turísticos
+        <!-- Proyecto 2: Pisos Turísticos
             <div class="project-row reverse">
                 <div class="project-info">
                     <span class="project-tag"><i class="fas fa-key"></i> Sector Inmobiliario / Turístico</span>
@@ -189,20 +183,13 @@
                 </div>
                 <div class="project-media">
                     <div class="media-grid">
-                        <a href="https://www.google.com" target="_blank" class="black-placeholder video-placeholder">
-                            <i class="fas fa-play-circle"></i>
-                            <span><video src="fotos/dashboard.mp4" class="project-media media-large" controls
-                                    playsinline></video></span>
-                        </a>
-                        <div class="black-placeholder">
-                            <span><img src="fotos/FotoDashboard.jpeg" alt="" class="project-media"></span>
-                        </div>
-                        <div class="black-placeholder">
-                            <span><img src="fotos/FotoReservas.jpeg" alt="" class="project-media"></span>
-                        </div>
+                        <video src="fotos/dashboard.mp4" class="project-item item-large" controls playsinline></video>
+                        <img src="fotos/FotoDashboard.jpeg" alt="" class="project-item gallery-img">
+                        <img src="fotos/FotoReservas.jpeg" alt="" class="project-item gallery-img">
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -361,7 +348,13 @@
                     target="_blank">A3CSoluciones</a>. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    <!-- VISOR DE IMÁGENES (LIGHTBOX) -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-prev">&#10094;</button>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="lightbox-next">&#10095;</button>
+    </div>
     <script src="script.js"></script>
 </body>
 

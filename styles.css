@@ -344,33 +344,6 @@ body {
     gap: 15px;
 }
 
-/* CUADRADOS NEGROS TEMPORALES */
-.black-placeholder {
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    min-height: 150px;
-    text-decoration: none;
-    border: 2px solid #333;
-    transition: var(--transition);
-}
-
-.video-placeholder {
-    grid-column: span 2;
-    min-height: 220px;
-}
-
-.video-placeholder i {
-    font-size: 3rem;
-    color: var(--primary-orange);
-    margin-bottom: 10px;
-}
 
 
 .divider {
@@ -427,14 +400,6 @@ body {
     padding: 25px;
     border-radius: var(--border-radius);
     text-align: center;
-}
-
-.avatar-placeholder {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    min-height: auto;
 }
 
 .team-avatar {
@@ -662,28 +627,126 @@ body {
 }
 
 /* ESTILOS PARA IMÁGENES Y VÍDEOS DE PROYECTOS/DASHBOARD */
-.project-media {
+/* --- ESTILOS DE LA CUADRÍCULA LIMPIA (Sin fondos ni hovers) --- */
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+    /* Impide que las fotos se estiren hacia abajo saliéndose de la sección */
+}
+
+.project-item {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-    /* Ajusta el contenido al marco sin deformarlo */
-    border-radius: var(--border-radius);
-    border: 2px solid #e1e8ed;
+    height: auto;
+    /* Altura natural para fotos móviles */
+    max-height: 400px;
+    object-fit: contain;
+    /* Muestra la foto/vídeo entero sin cortar nada y sin negro */
+    border-radius: 8px;
     display: block;
-    transition: var(--transition);
-    background-color: var(--dark-slate);
-    /* Fondo por si el vídeo tarda en cargar */
+    background-color: transparent;
+    /* Adiós al fondo negro */
+    border: none;
+    /* Adiós a los bordes */
+    box-shadow: none;
+    /* Adiós a las sombras raras */
 }
 
-/* El elemento principal (normalmente el vídeo) ocupa el doble de ancho y es más alto */
-.project-media.media-large {
+.gallery-img {
+    cursor: pointer;
+    /* Solo las imágenes tienen el cursor de la manita */
+    transition: opacity 0.3s ease;
+}
+
+.gallery-img:hover {
+    opacity: 0.8;
+    /* Un leve efecto de brillo al pasar el ratón, muy elegante */
+}
+
+.project-item.item-large {
     grid-column: span 2;
-    height: 220px;
+    cursor: default;
 }
 
-/* Efecto al pasar el ratón */
-.project-media:hover {
-    border-color: var(--primary-orange);
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+/* --- VISOR DE IMÁGENES PANTALLA COMPLETA (LIGHTBOX) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 5vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    /* Fondo oscuro translúcido */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 6px;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lightbox-close:hover {
+    color: var(--primary-orange);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 4px;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: var(--primary-orange);
 }

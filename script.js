@@ -66,3 +66,48 @@ contactForm.addEventListener('submit', function (e) {
             submitBtn.textContent = 'Enviar Mensaje';
         });
 });
+// 4. VISOR DE IMÁGENES (LIGHTBOX) PANTALLA COMPLETA
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox-close');
+const prevBtn = document.querySelector('.lightbox-prev');
+const nextBtn = document.querySelector('.lightbox-next');
+
+if (lightbox && lightboxImg) {
+    // Recoge todas las imágenes que tengan la clase gallery-img
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+    let currentIndex = 0;
+
+    // Al hacer clic en una foto, se abre el visor
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'block';
+            lightboxImg.src = img.src;
+            currentIndex = index;
+        });
+    });
+
+    // Cerrar con la X
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Cerrar pinchando fuera de la foto
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Flecha Izquierda
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryImages.length - 1;
+        lightboxImg.src = galleryImages[currentIndex].src;
+    });
+
+    // Flecha Derecha
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < galleryImages.length - 1) ? currentIndex + 1 : 0;
+        lightboxImg.src = galleryImages[currentIndex].src;
+    });
+}
