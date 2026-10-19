@@ -2,16 +2,17 @@
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navLinks = document.getElementById('nav-links');
 
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// Cerrar el menú móvil al hacer clic en un enlace
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
-});
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+}
 
 // Gestión REAL del formulario de contacto (Envío directo a Gmail sin backend)
 const contactForm = document.getElementById('contact-form');
