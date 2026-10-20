@@ -235,6 +235,12 @@ body {
     color: var(--white);
 }
 
+/* --- NUEVOS FONDOS Y TARJETAS FLOTANTES --- */
+.bg-soft {
+    background-color: #f0f5f9;
+    /* Color suave para no dañar la vista */
+}
+
 .section-header {
     text-align: center;
     max-width: 700px;
@@ -289,13 +295,21 @@ body {
     margin-bottom: 12px;
 }
 
-/* PROYECTOS Y HUECOS EN NEGRO */
+/* PROYECTOS Y TARJETAS */
 .project-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
     margin-bottom: 40px;
+}
+
+.project-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.05);
+    /* Sombra elegante */
 }
 
 .project-row.reverse {
@@ -338,14 +352,6 @@ body {
     margin-right: 8px;
 }
 
-.media-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-
-
 .divider {
     border: none;
     border-top: 1px solid #e1e8ed;
@@ -370,6 +376,11 @@ body {
     line-height: 1.25;
 }
 
+/* Modificamos el título en el dashboard para que se vea bien en fondo blanco */
+.dashboard-showcase-row .dashboard-title {
+    color: var(--navy-blue) !important;
+}
+
 .banner-content {
     display: flex;
     justify-content: space-between;
@@ -377,6 +388,199 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 }
+
+/* --- CARRUSEL MULTIMEDIA INTEGRADO --- */
+.inline-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Mantendrá un rectángulo perfecto de vídeo */
+    background-color: #000;
+    /* Fondo negro solo en el hueco del vídeo/foto */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none;
+    /* Para no hacer clics fantasma */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+/* El vídeo y la foto se ajustan al marco sin cortarse */
+.carousel-slide .project-item {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Flechas grandes y visibles */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-orange);
+    color: var(--white);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary-orange-hover);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+/* Puntitos inferiores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--primary-orange);
+    transform: scale(1.2);
+}
+
+/* Cursor de ampliación solo para las imágenes */
+.gallery-img {
+    cursor: pointer;
+}
+
+/* --- VISOR DE IMÁGENES PANTALLA COMPLETA (LIGHTBOX) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 5vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    /* Fondo oscuro translúcido */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 6px;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lightbox-close:hover {
+    color: var(--primary-orange);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 4px;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: var(--primary-orange);
+}
+
 
 /* SOBRE NOSOTROS */
 .about-story {
@@ -633,129 +837,4 @@ body {
     .hero h1 {
         font-size: 2.2rem;
     }
-}
-
-/* ESTILOS PARA IMÁGENES Y VÍDEOS DE PROYECTOS/DASHBOARD */
-/* --- ESTILOS DE LA CUADRÍCULA LIMPIA (Sin fondos ni hovers) --- */
-.media-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    align-items: start;
-    /* Impide que las fotos se estiren hacia abajo saliéndose de la sección */
-}
-
-.project-item {
-    width: 100%;
-    height: auto;
-    /* Altura natural para fotos móviles */
-    max-height: 400px;
-    object-fit: contain;
-    /* Muestra la foto/vídeo entero sin cortar nada y sin negro */
-    border-radius: 8px;
-    display: block;
-    background-color: transparent;
-    /* Adiós al fondo negro */
-    border: none;
-    /* Adiós a los bordes */
-    box-shadow: none;
-    /* Adiós a las sombras raras */
-}
-
-.gallery-img {
-    cursor: pointer;
-    /* Solo las imágenes tienen el cursor de la manita */
-    transition: opacity 0.3s ease;
-}
-
-.gallery-img:hover {
-    opacity: 0.8;
-    /* Un leve efecto de brillo al pasar el ratón, muy elegante */
-}
-
-.project-item.item-large {
-    grid-column: span 2;
-    cursor: default;
-}
-
-
-/* --- VISOR DE IMÁGENES PANTALLA COMPLETA (LIGHTBOX) --- */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 5vh;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.92);
-    /* Fondo oscuro translúcido */
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 85vh;
-    border-radius: 6px;
-    object-fit: contain;
-    animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.95);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #ffffff;
-    font-size: 45px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.lightbox-close:hover {
-    color: var(--primary-orange);
-}
-
-.lightbox-prev,
-.lightbox-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 20px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    transition: 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: none;
-    border-radius: 4px;
-}
-
-.lightbox-prev {
-    left: 20px;
-}
-
-.lightbox-next {
-    right: 20px;
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
-    background-color: var(--primary-orange);
 }

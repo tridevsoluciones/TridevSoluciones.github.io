@@ -96,16 +96,17 @@
         </div>
     </section>
 
-    <!-- PROYECTOS Y DEMOSTRACIONES (Con huecos negros temporales) -->
-    <section id="proyectos" class="section">
+    <!-- PROYECTOS Y DEMOSTRACIONES -->
+    <!-- Añadida la clase bg-soft para relajar la vista -->
+    <section id="proyectos" class="section bg-soft">
         <div class="container">
             <div class="section-header">
                 <h2>Nuestros Proyectos en Acción</h2>
                 <p>Casos reales de automatización implementados con éxito.</p>
             </div>
 
-            <!-- Proyecto 1: Salón de Celebraciones -->
-            <div class="project-row">
+            <!-- Proyecto 1: Salón de Celebraciones (Metido en una tarjeta flotante) -->
+            <div class="project-row project-card">
                 <div class="project-info">
                     <span class="project-tag"><i class="fab fa-whatsapp"></i> Automatización WhatsApp</span>
                     <h3>Gestión de Citas para Salón de Celebraciones</h3>
@@ -117,23 +118,45 @@
                         <li><i class="fas fa-check"></i> Sincronización con calendario y Panel de Control.</li>
                         <li><i class="fas fa-check"></i> Flujo de conversación personalizado al cliente.</li>
                     </ul>
+                    <a href="https://www.google.com" target="_blank" class="btn btn-outline">Ver Caso de Estudio</a>
                 </div>
+
+                <!-- NUEVO CARRUSEL MULTIMEDIA -->
                 <div class="project-media">
-                    <div class="media-grid">
-                        <video src="fotos/autodate.mp4" class="project-item item-large" controls playsinline></video>
+                    <div class="inline-carousel">
+                        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
 
-                        <img src="fotos/FotoLista.jpeg" alt="" class="project-item gallery-img" data-gallery="whatsapp">
+                        <div class="carousel-track">
+                            <!-- SLIDE 1: VÍDEO -->
+                            <div class="carousel-slide active">
+                                <video src="tu-video-whatsapp.mp4" class="project-item" controls playsinline></video>
+                            </div>
+                            <!-- SLIDE 2: FOTO 1 -->
+                            <div class="carousel-slide">
+                                <img src="tu-captura-whatsapp-1.jpg" alt="Captura 1" class="project-item gallery-img"
+                                    data-gallery="whatsapp">
+                            </div>
+                            <!-- SLIDE 3: FOTO 2 -->
+                            <div class="carousel-slide">
+                                <img src="tu-captura-whatsapp-2.jpg" alt="Captura 2" class="project-item gallery-img"
+                                    data-gallery="whatsapp">
+                            </div>
+                        </div>
 
-                        <img src="fotos/FotoConfirmacion.jpeg" alt="" class="project-item gallery-img"
-                            data-gallery="whatsapp">
+                        <!-- Puntos indicadores -->
+                        <div class="carousel-indicators">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <hr class="divider">
-
-        <!-- Proyecto 2: Pisos Turísticos
+    <!-- Proyecto 2: Pisos Turísticos
             <div class="project-row reverse">
                 <div class="project-info">
                     <span class="project-tag"><i class="fas fa-key"></i> Sector Inmobiliario / Turístico</span>
@@ -163,36 +186,56 @@
                     </div>
                 </div>
             </div> -->
-        </div>
+    </div>
     </section>
 
-    <!-- DEMOSTRACIÓN DEL DASHBOARD DE CLIENTES (Sin botón, con galería de vídeo e imágenes) -->
+    <!-- DEMOSTRACIÓN DEL DASHBOARD -->
     <section class="dashboard-banner">
         <div class="container">
-            <div class="project-row dashboard-showcase-row">
+            <div class="project-row dashboard-showcase-row project-card">
                 <div class="project-info">
                     <span class="project-tag"><i class="fas fa-chart-pie"></i> Panel de Control en Render</span>
                     <h2 class="dashboard-title">¿Ya eres cliente de TridevSoluciones? Así es tu Dashboard</h2>
-                    <p>Cada proyecto incluye acceso a un panel personalizado alojado en la nube para gestionar tus
-                        automatizaciones, visualizar métricas y controlar citas en tiempo real de forma sencilla e
-                        intuitiva.</p>
-                    <ul class="project-list">
+                    <p style="color: var(--text-muted);">Cada proyecto incluye acceso a un panel personalizado alojado
+                        en la nube para gestionar tus automatizaciones, visualizar métricas y controlar citas en tiempo
+                        real de forma sencilla e intuitiva.</p>
+                    <ul class="project-list" style="color: var(--text-main);">
                         <li><i class="fas fa-check"></i> Estadísticas y registro de actividad en vivo.</li>
                         <li><i class="fas fa-check"></i> Gestión manual y automática de reservas o citas.</li>
                         <li><i class="fas fa-check"></i> Interfaz adaptada a las necesidades de tu negocio.</li>
                     </ul>
                 </div>
                 <div class="project-media">
-                    <div class="media-grid">
-                        <video src="fotos/dashboard.mp4" class="project-item item-large" controls playsinline></video>
-                        <img src="fotos/FotoDashboard.png" alt="" class="project-item gallery-img item-large"
-                            data-gallery="dashboard">
-                        <img src="fotos/FotoReservas.png" alt="" class="project-item gallery-img item-large"
-                            data-gallery="dashboard">
+                    <!-- NUEVO CARRUSEL MULTIMEDIA -->
+                    <div class="inline-carousel">
+                        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+
+                        <div class="carousel-track">
+                            <!-- SLIDE 1: VÍDEO -->
+                            <div class="carousel-slide active">
+                                <video src="tu-video-dashboard.mp4" class="project-item" controls playsinline></video>
+                            </div>
+                            <!-- SLIDE 2: FOTO 1 -->
+                            <div class="carousel-slide">
+                                <img src="tu-captura-dash-1.jpg" alt="Vista Métricas" class="project-item gallery-img"
+                                    data-gallery="dashboard">
+                            </div>
+                            <!-- SLIDE 3: FOTO 2 -->
+                            <div class="carousel-slide">
+                                <img src="tu-captura-dash-2.jpg" alt="Vista Configuración"
+                                    class="project-item gallery-img" data-gallery="dashboard">
+                            </div>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 

@@ -125,3 +125,49 @@ if (lightbox && lightboxImg) {
         lightboxImg.src = currentGallery[currentIndex].src;
     });
 }
+// 5. LÓGICA DE LOS CARRUSELES INTEGADOS (Flechas y Pausa automática)
+document.querySelectorAll('.inline-carousel').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    const dots = carousel.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        // Pausar el vídeo automáticamente si pasamos a otra diapositiva
+        const activeVideo = slides[currentSlide].querySelector('video');
+        if (activeVideo) activeVideo.pause();
+
+        // Ocultar slide actual
+        slides[currentSlide].classList.remove('active');
+        if (dots.length > 0) dots[currentSlide].classList.remove('active');
+
+        // Actualizar índice
+        currentSlide = index;
+
+        // Mostrar nuevo slide
+        slides[currentSlide].classList.add('active');
+        if (dots.length > 0) dots[currentSlide].classList.add('active');
+    }
+
+    // Flecha izquierda
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            let index = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            showSlide(index);
+        });
+    }
+
+    // Flecha derecha
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            let index = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(index);
+        });
+    }
+
+    // Clic en los puntitos inferiores
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+});
