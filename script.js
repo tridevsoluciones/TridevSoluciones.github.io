@@ -66,7 +66,7 @@ contactForm.addEventListener('submit', function (e) {
             submitBtn.textContent = 'Enviar Mensaje';
         });
 });
-// 4. VISOR DE IMÁGENES (LIGHTBOX) PANTALLA COMPLETA
+// 4. VISOR DE IMÁGENES (LIGHTBOX) SEPARADO POR GALERÍAS
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.querySelector('.lightbox-close');
@@ -74,16 +74,28 @@ const prevBtn = document.querySelector('.lightbox-prev');
 const nextBtn = document.querySelector('.lightbox-next');
 
 if (lightbox && lightboxImg) {
-    // Recoge todas las imágenes que tengan la clase gallery-img
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+    const allGalleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+    let currentGallery = [];
     let currentIndex = 0;
 
-    // Al hacer clic en una foto, se abre el visor
-    galleryImages.forEach((img, index) => {
+    allGalleryImages.forEach((img) => {
         img.addEventListener('click', () => {
+            // 1. Miramos a qué galería pertenece la foto clicada
+            const galleryName = img.getAttribute('data-gallery');
+
+            // 2. Filtramos solo las imágenes que tengan ese mismo nombre
+            if (galleryName) {
+                currentGallery = allGalleryImages.filter(i => i.getAttribute('data-gallery') === galleryName);
+            } else {
+                currentGallery = [img]; // Por si alguna foto no tiene grupo
+            }
+
+            // 3. Buscamos en qué posición está la foto clicada dentro de su grupo
+            currentIndex = currentGallery.indexOf(img);
+
+            // 4. Mostramos el visor
             lightbox.style.display = 'block';
             lightboxImg.src = img.src;
-            currentIndex = index;
         });
     });
 
@@ -101,13 +113,15 @@ if (lightbox && lightboxImg) {
 
     // Flecha Izquierda
     prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryImages.length - 1;
-        lightboxImg.src = galleryImages[currentIndex].src;
+        if (currentGallery.length === 0) return;
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentGallery.length - 1;
+        lightboxImg.src = currentGallery[currentIndex].src;
     });
 
     // Flecha Derecha
     nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex < galleryImages.length - 1) ? currentIndex + 1 : 0;
-        lightboxImg.src = galleryImages[currentIndex].src;
+        if (currentGallery.length === 0) return;
+        currentIndex = (currentIndex < currentGallery.length - 1) ? currentIndex + 1 : 0;
+        lightboxImg.src = currentGallery[currentIndex].src;
     });
 }
